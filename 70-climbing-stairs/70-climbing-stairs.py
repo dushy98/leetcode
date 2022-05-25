@@ -1,20 +1,18 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        # using top-down memoization
+        # dynamic programming
         
-        memo = {}
-        memo[1] = 1
-        memo[2] = 2
+        #edge cases
+        if n == 0: return 0
+        if n == 1: return 1
+        if n == 2: return 2
         
-        def climb(n):
-            if n in memo:           # check if recusion done before in look-up table
-                return memo[n]
-            else:                   # store the recusrssion function in look-up table and return
-                memo[n] = climb(n-1) + climb(n-2)
-                return memo[n]
-            
-        return climb(n)
-            
+        dp = [0]*(n+1) # need n+1 places
+        dp[1] = 1
+        dp[2] = 2
+        for i in range(3,n+1):
+            dp[i] = dp[i-1] + dp[i-2]
+        return dp[n]
         
 
         
