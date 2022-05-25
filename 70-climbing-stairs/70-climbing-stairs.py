@@ -2,7 +2,7 @@ class Solution:
     def climbStairs(self, n: int) -> int:
         # dynamic programming
         
-        #edge cases
+        #edge case
         if n == 0: return 0
         if n == 1: return 1
         if n == 2: return 2
