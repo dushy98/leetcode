@@ -1,6 +1,6 @@
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
-        # considering all edge-cases
+        # considering all edge--cases
         sign = 1 if dividend ^ divisor >= 0 else -1
         
         dividend, divisor = abs(dividend), abs(divisor)
