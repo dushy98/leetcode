@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool hasAllCodes(string s, int k) {
-        // edge case
+        // edge case if k > s
         if ( k > s.size()) return false;
         
         unordered_set<string> set;
