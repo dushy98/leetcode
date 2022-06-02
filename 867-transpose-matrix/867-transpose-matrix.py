@@ -3,6 +3,7 @@ class Solution:
         R = len(matrix)
         C = len(matrix[0])
         
+        # 
         transpose = []
         for c in range(C):
             newRow = []
