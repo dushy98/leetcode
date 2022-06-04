@@ -4,10 +4,10 @@ class Solution:
         self.dfs([-1]*n, 0, [], res)
         return res
     
-    def dfs(self, nums, index, path, res):
+    def dfs(self, nums, index, path, res):       # Backtracking
         if index == len(nums):             
             res.append(path)
-            return                          # Backtracking
+            return                          
         
         for i in range(len(nums)):
             nums[index] = i
