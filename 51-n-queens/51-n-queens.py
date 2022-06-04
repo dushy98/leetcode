@@ -4,7 +4,8 @@ class Solution:
         self.dfs([-1]*n, 0, [], res)
         return res
     
-    def dfs(self, nums, index, path, res):       # Backtracking
+    # Backtracking
+    def dfs(self, nums, index, path, res):       
         if index == len(nums):             
             res.append(path)
             return                          
