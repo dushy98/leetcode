@@ -6,7 +6,7 @@ class Solution:
         
         return self.helper(n, diagonal_1, diagonal_2, usedColumns, 0)
         
-    
+    #helper function to modularize
     def helper(self, n, diagonal_1, diagonal_2, usedColumns, row):
         if row == n:
             return 1
