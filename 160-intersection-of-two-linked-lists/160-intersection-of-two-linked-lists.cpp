@@ -11,7 +11,7 @@ public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         
         ListNode *p1 = headA;
-        ListNode *p2 = headB;  // 2 pointers
+        ListNode *p2 = headB;  // 2-pointers
         
         if (p1 == NULL || p2 == NULL) return NULL;
         
