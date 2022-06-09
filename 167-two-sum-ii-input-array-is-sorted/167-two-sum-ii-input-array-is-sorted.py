@@ -1,5 +1,6 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        # 2 pointers because array is sorted
         left, right = 0, len(numbers) - 1
         
         while left < right:
