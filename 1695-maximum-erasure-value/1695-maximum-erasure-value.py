@@ -3,7 +3,7 @@ class Solution:
         begin, end, Set, summ = 0, 0, set(), 0
         ans = 0
         
-        # 2-pointer or sliding window approach 
+        # 2-pointer or sliding-window approach 
         while end < len(nums):
             if nums[end] not in Set:
                 summ += nums[end]
