@@ -7,20 +7,16 @@
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         ret = []
-    
         level = [root]
-    
         while root and level:
-            currentNodes = []
+            currNode = []
             nextLevel = []
             for node in level:
-                currentNodes.append(node.val)
+                currNode.append(node.val)
                 if node.left:
                     nextLevel.append(node.left)
                 if node.right:
                     nextLevel.append(node.right)
-            ret.append(currentNodes)
+            ret.append(currNode)
             level = nextLevel
-        
-        
         return ret
