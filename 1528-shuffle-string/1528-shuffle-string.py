@@ -1,7 +1,3 @@
 class Solution:
     def restoreString(self, s: str, indices: List[int]) -> str:
-        res = [''] * len(s)
-        for index, char in enumerate(s):
-            res[indices[index]] = char
-            
-        return "".join(res)
+        return "".join([s[i] for i in sorted(list(range(len(s))), key = lambda x:indices[x])])
