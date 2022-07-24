@@ -3,7 +3,7 @@ class Solution:
         prod = 1
         sum = 0
         num = n
-        for i in range(len(str(n))):
+        while num > 0:
             prod = prod * (num%10)
             sum = sum + (num%10)
             num = num // 10
