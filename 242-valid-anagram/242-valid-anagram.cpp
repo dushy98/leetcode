@@ -1,6 +1,8 @@
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        tracker = collections.defaultdict(int)
-        for x in s: tracker[x] += 1
-        for x in t: tracker[x] -= 1
-        return all(x == 0 for x in tracker.values())
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        sort(s.begin(), s.end());
+        sort(t.begin(), t.end());
+        return s == t;
+    }
+};
