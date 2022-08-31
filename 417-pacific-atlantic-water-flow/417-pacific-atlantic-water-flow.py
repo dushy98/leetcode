@@ -1,24 +1,24 @@
 class Solution:
-    def pacificAtlantic(self, ht: List[List[int]]) -> List[List[int]]:
+    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
         def pac(i,j):
             if rp[i][j]:
                 return True
             k=False
-            h=ht[i][j]
-            ht[i][j]=100001
-            if ht[i-1][j]<=h:
+            h=heights[i][j]
+            heights[i][j]=100001
+            if heights[i-1][j]<=h:
                 k=k or pac(i-1,j)
                 
-            if ht[i][j-1]<=h:
+            if heights[i][j-1]<=h:
                 k=k or pac(i,j-1)
                 
-            if i<m-1 and ht[i+1][j]<=h:
+            if i<m-1 and heights[i+1][j]<=h:
                 k=k or pac(i+1,j)
                 
-            if j<n-1 and ht[i][j+1]<=h:
+            if j<n-1 and heights[i][j+1]<=h:
                 k=k or pac(i,j+1)
                 
-            ht[i][j]=h
+            heights[i][j]=h
             rp[i][j]=k
             return k
         
@@ -26,26 +26,26 @@ class Solution:
             if ra[i][j]:
                 return True
             k=False
-            h=ht[i][j]
-            ht[i][j]=100001
-            if i>0 and ht[i-1][j]<=h:
+            h=heights[i][j]
+            heights[i][j]=100001
+            if i>0 and heights[i-1][j]<=h:
                 k=k or ant(i-1,j)
                 
-            if j>0 and ht[i][j-1]<=h:
+            if j>0 and heights[i][j-1]<=h:
                 k=k or ant(i,j-1)
                 
-            if ht[i+1][j]<=h:
+            if heights[i+1][j]<=h:
                 k=k or ant(i+1,j)
                 
-            if ht[i][j+1]<=h:
+            if heights[i][j+1]<=h:
                 k=k or ant(i,j+1)
                 
-            ht[i][j]=h
+            heights[i][j]=h
             ra[i][j]=k
             return k
         
-        m=len(ht)
-        n=len(ht[0])
+        m=len(heights)
+        n=len(heights[0])
         rp=[[False for i in range(n)] for j in range(m)]
         ra=[[False for i in range(n)] for j in range(m)]
         
