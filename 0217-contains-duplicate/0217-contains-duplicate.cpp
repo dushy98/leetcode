@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-      unordered_set<int> seen;
+      unordered_set<int> seen;    // O(n) using Unordered set
       for(int num: nums){
           if (seen.count(num) > 0)
           return true;
@@ -10,3 +10,5 @@ public:
       return false;
     }
 };
+
+
