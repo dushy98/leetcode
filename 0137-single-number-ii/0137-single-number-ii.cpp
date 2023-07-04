@@ -1,19 +1,19 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        // brute force cpp
-        unordered_map<int, int> n;
-       
-       for(auto i:nums){
-           n[i]++;
-       }
+        // bit mask cpp
+        int ans = 0;
 
-        for (auto i: n){
-            if(i.second == 1){
-                return i.first;
+        for (int i = 0; i < 32; ++i){
+            int sum = 0;
+            for (const int num : nums){
+                sum += num >> i & 1;
             }
+
+            sum %= 3;
+            ans |= sum << i;
         }
 
-        return -1;
+        return ans;
     }
 };
